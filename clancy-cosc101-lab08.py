@@ -68,7 +68,7 @@ class math:
             print(f"y({a}) = {y}")
             a += 1
 
-    def quadratic_root(a,b,c):
+    def quadratic_root(a,b,c):  #PART THREE CONDITIONS
         qroot_numer = (b ** 2) - (4 *a *c)
 
         if qroot_numer >= 0:
@@ -77,7 +77,7 @@ class math:
             qroot_numer = "null"
             return qroot_numer
 
-    def quadratic_solution(a,b,input):
+    def quadratic_solution(a,b,input):  #PART THREE CONDITIONS
         if input == "null":
             return "Solution: null"
         else:
