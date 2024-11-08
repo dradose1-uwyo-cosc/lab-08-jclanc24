@@ -16,13 +16,13 @@
 
 class math:
     
-    def __init__(self, input, a, an, m, x, b):
+    def __init__(self, input, a, an, m, b, c):
         self.input = input
         self.a = a  #lower bound
         self.an= an #upper bound
-        self.x = x
         self.b = b
         self.m = m
+        self.c = c
 
     def int_check(input):   #PART ONE CONDITIONS
         if "." in input:
@@ -64,9 +64,29 @@ class math:
         
     def linear(a, an, m, b):
         while a <= an:
-            y = m * (an - a) + b
+            y = m * (a) + b
             print(f"y({a}) = {y}")
             a += 1
+
+    def quadratic_root(a,b,c):
+        qroot_numer = (b ** 2) - (4 *a *c)
+
+        if qroot_numer >= 0:
+            return (qroot_numer ** 0.5)
+        else:
+            qroot_numer = "null"
+            return qroot_numer
+
+    def quadratic_solution(a,b,input):
+        if input == "null":
+            return "Solution: null"
+        else:
+            input = float(input)
+            add = (-b + input) / (2 * a)
+            sub = (-b - input) / (2 * a)
+            solution = (f"Solution: {add:.1f}\nSolution: {sub:.1f}")
+            return solution
+        
 
        
         
@@ -75,6 +95,9 @@ class math:
 #PROGRAM START
 
 #PART ONE
+print("*" * 75)
+print("PART ONE - TRY INT OR FLOAT TYPES")
+print("*" * 75)
 print("Type 'quit' or 'exit' to stop the program.")
 print("Type 'continue' to process to the next part.")
 
@@ -90,7 +113,7 @@ while True:
     
 #PART TWO
 print("*" * 75)
-print("PART TWO")
+print("PART TWO - POINT SLOPE FORMULA")
 print("*" * 75)
 
 linear_dict = {"a": "", "an": "", "m":"","b":""}
@@ -176,6 +199,54 @@ while continue_loop == True:
 # Call your function and print the resulting list
 
 
+#PART THREE
+print("*" * 75)
+print("PART THREE - QUADRATIC FORMULA")
+print("*" * 75)
+print("Type 'quit' or 'exit' to stop the program.")
+
+quadratic_dict = {"a":"","b":"","c":""}
+
+while continue_loop == True:
+    for key in quadratic_dict.keys():
+        while True:
+            user_input = input(f"Please enter the value for '{key}': ")
+            if "quit" == user_input.lower() or "exit" == user_input.lower():
+                    quit()
+            is_digit = math.f_bounds(user_input)
+            if is_digit == True:
+                quadratic_dict[key] = float(user_input)
+                break
+            else:
+                print("Please enter a valid numeric number!")
+
+    qroot = math.quadratic_root(quadratic_dict["a"], quadratic_dict["b"], quadratic_dict["c"])
+    quadratic_sol = math.quadratic_solution(quadratic_dict["a"],quadratic_dict["b"], qroot)
+
+    print(quadratic_sol)
+
+    user_continue = input("Would you like to continue with another calculation?\nPress any key to break, otherwise press 'Y':\t")
+
+    if user_continue.lower() == "y":
+        continue_loop = True
+    else:
+        break    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Write a function to solve the quadratic formula
@@ -185,3 +256,4 @@ while continue_loop == True:
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
+
