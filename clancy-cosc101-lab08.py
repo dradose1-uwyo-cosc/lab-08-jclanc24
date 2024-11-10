@@ -1,12 +1,11 @@
-# Your Name Here
+
+# John Clancy
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
+# Submission Date: 11/8/2024
+# Lab 08
+# Lab Section: 13
 # Sources, people worked with, help given to:
-# your
-# comments
-# here
+# 
 
 
 # Write a function that will properly check strings to see if they are an int or float, and convert them if so
@@ -25,21 +24,12 @@ class math:
         self.c = c
 
     def int_check(input):   #PART ONE CONDITIONS
-        if "." in input:
-            print(f"{(float(input)):.1f} is a float.")
-            return True
-
-        elif "-" in input:
-            num = int(input)
-            print(f"{num} is an integer.")
-            return True
-
-        elif input.isdigit():
+        try:
+            int(input)
             print(f"{input} is an integer.")
             return True
-
-        else:
-            print("ERROR: Numeric Values Only!")
+        except ValueError:
+            print(f"{input} is not an integer.")
             return False
         
     def x_bounds(input):    #PART TWO CONDITIONS
@@ -167,13 +157,6 @@ while continue_loop == True:
     
         
 
-
-
-        
-
-
-
-
 # Point-slope y = mx + b
 
 
@@ -200,6 +183,8 @@ while continue_loop == True:
 
 
 #PART THREE
+
+
 print("*" * 75)
 print("PART THREE - QUADRATIC FORMULA")
 print("*" * 75)
@@ -256,4 +241,3 @@ while continue_loop == True:
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
-
