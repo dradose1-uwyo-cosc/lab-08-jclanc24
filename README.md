@@ -1,12 +1,10 @@
-# [Name]
-## [Assignment #]
-## [Submission date: MM/DD/YY]
+# [John Clancy]
+## [Assignment #8]
+## [Submission date: 11/09/2024]
 ## Worked with/sources 
-* example
+* None- Lecture notes and PPTs
 * example
 * example
 * example
 ## Project Quirks/ Things that don't work
-* example
-* example
-* example
+* not having return command in a function returns None in operator
